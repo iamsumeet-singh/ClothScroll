@@ -141,21 +141,109 @@ const caseStudies = [{
   tags: ["Multi-Platform", "Automation", "Custom Tools", "Consulting"]
 }];
 const CaseStudies = () => {
-  return <>
+  return (
+    <>
       <Helmet>
         <title>Case Studies | Prateek Prakash - Performance Marketing Results</title>
         <meta name="description" content="Real results from performance marketing campaigns. See how I've reduced CPL by 80%, generated ₹6Cr+ revenue, and achieved 20-30x ROAS for clients." />
       </Helmet>
       <Layout>
         {/* Hero */}
-        
+        <section className="py-20 md:py-32">
+          <div className="container mx-auto px-4">
+            <div className="text-center max-w-3xl mx-auto">
+              <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+                Proven Results
+              </span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">
+                Case Studies
+              </h1>
+              <p className="text-lg md:text-xl text-muted-foreground">
+                Real campaigns, real results. Explore how I've helped businesses achieve exceptional growth through data-driven performance marketing.
+              </p>
+            </div>
+          </div>
+        </section>
 
         {/* Case Studies Grid */}
-        
+        <section className="py-16 md:py-24">
+          <div className="container mx-auto px-4">
+            <div className="grid gap-8">
+              {caseStudies.map((study, index) => (
+                <div
+                  key={index}
+                  className="group p-8 rounded-2xl border border-border bg-card hover:border-primary/50 transition-all duration-300"
+                >
+                  <div className="flex flex-col lg:flex-row lg:items-start gap-8">
+                    <div className="lg:w-1/3">
+                      <span className="text-sm text-primary font-medium">{study.industry}</span>
+                      <h3 className="text-2xl font-display font-bold mt-2 mb-4">{study.title}</h3>
+                      <div className="space-y-3 text-sm text-muted-foreground">
+                        <p><strong className="text-foreground">Challenge:</strong> {study.challenge}</p>
+                        <p><strong className="text-foreground">Solution:</strong> {study.solution}</p>
+                      </div>
+                      <div className="flex flex-wrap gap-2 mt-4">
+                        {study.tags.map((tag, tagIndex) => (
+                          <span
+                            key={tagIndex}
+                            className="px-3 py-1 rounded-full bg-muted text-muted-foreground text-xs"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="lg:w-2/3 grid grid-cols-2 md:grid-cols-4 gap-4">
+                      {study.results.map((result, resultIndex) => (
+                        <div
+                          key={resultIndex}
+                          className="p-4 rounded-xl bg-muted/50 text-center"
+                        >
+                          <div className="text-2xl md:text-3xl font-display font-bold text-primary">
+                            {result.value}
+                          </div>
+                          <div className="text-sm font-medium mt-1">{result.metric}</div>
+                          <div className="text-xs text-muted-foreground mt-1">{result.detail}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* Summary Stats */}
-        
+        <section className="py-16 md:py-24 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div className="text-center">
+                <DollarSign className="w-8 h-8 text-primary mx-auto mb-4" />
+                <div className="text-3xl md:text-4xl font-display font-bold">₹6Cr+</div>
+                <div className="text-muted-foreground mt-2">Revenue Generated</div>
+              </div>
+              <div className="text-center">
+                <Target className="w-8 h-8 text-primary mx-auto mb-4" />
+                <div className="text-3xl md:text-4xl font-display font-bold">80%+</div>
+                <div className="text-muted-foreground mt-2">CPL Reduction</div>
+              </div>
+              <div className="text-center">
+                <TrendingUp className="w-8 h-8 text-primary mx-auto mb-4" />
+                <div className="text-3xl md:text-4xl font-display font-bold">30x</div>
+                <div className="text-muted-foreground mt-2">Max ROAS Achieved</div>
+              </div>
+              <div className="text-center">
+                <Users className="w-8 h-8 text-primary mx-auto mb-4" />
+                <div className="text-3xl md:text-4xl font-display font-bold">15+</div>
+                <div className="text-muted-foreground mt-2">Clients Served</div>
+              </div>
+            </div>
+          </div>
+        </section>
       </Layout>
-    </>;
+    </>
+  );
 };
+
 export default CaseStudies;
