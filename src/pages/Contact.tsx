@@ -14,6 +14,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     company: "",
     budget: "",
     message: ""
@@ -31,6 +32,7 @@ const Contact = () => {
     setFormData({
       name: "",
       email: "",
+      phone: "",
       company: "",
       budget: "",
       message: ""
@@ -72,45 +74,53 @@ const Contact = () => {
                 <h2 className="font-display text-2xl font-bold mb-6">Send a Message</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="text-sm font-medium text-foreground mb-2 block">Name *</label>
+                    <div className="group">
+                      <label className="text-sm font-medium text-foreground mb-2 block transition-colors group-focus-within:text-primary">Name *</label>
                       <Input required value={formData.name} onChange={e => setFormData({
                       ...formData,
                       name: e.target.value
-                    })} placeholder="Your name" className="bg-secondary border-border" />
+                    })} placeholder="Your name" className="bg-secondary border-border transition-all duration-300 focus:scale-[1.02] focus:shadow-lg focus:shadow-primary/20" />
                     </div>
-                    <div>
-                      <label className="text-sm font-medium text-foreground mb-2 block">Email *</label>
+                    <div className="group">
+                      <label className="text-sm font-medium text-foreground mb-2 block transition-colors group-focus-within:text-primary">Email *</label>
                       <Input required type="email" value={formData.email} onChange={e => setFormData({
                       ...formData,
                       email: e.target.value
-                    })} placeholder="your@email.com" className="bg-secondary border-border" />
+                    })} placeholder="your@email.com" className="bg-secondary border-border transition-all duration-300 focus:scale-[1.02] focus:shadow-lg focus:shadow-primary/20" />
                     </div>
+                  </div>
+                  
+                  <div className="group">
+                    <label className="text-sm font-medium text-foreground mb-2 block transition-colors group-focus-within:text-primary">Phone Number</label>
+                    <Input type="tel" value={formData.phone} onChange={e => setFormData({
+                    ...formData,
+                    phone: e.target.value
+                  })} placeholder="+91 9876543210" className="bg-secondary border-border transition-all duration-300 focus:scale-[1.02] focus:shadow-lg focus:shadow-primary/20" />
                   </div>
                   
                   <div className="grid sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="text-sm font-medium text-foreground mb-2 block">Company</label>
+                    <div className="group">
+                      <label className="text-sm font-medium text-foreground mb-2 block transition-colors group-focus-within:text-primary">Company</label>
                       <Input value={formData.company} onChange={e => setFormData({
                       ...formData,
                       company: e.target.value
-                    })} placeholder="Company name" className="bg-secondary border-border" />
+                    })} placeholder="Company name" className="bg-secondary border-border transition-all duration-300 focus:scale-[1.02] focus:shadow-lg focus:shadow-primary/20" />
                     </div>
-                    <div>
-                      <label className="text-sm font-medium text-foreground mb-2 block">Monthly Ad Budget</label>
+                    <div className="group">
+                      <label className="text-sm font-medium text-foreground mb-2 block transition-colors group-focus-within:text-primary">Monthly Ad Budget</label>
                       <Input value={formData.budget} onChange={e => setFormData({
                       ...formData,
                       budget: e.target.value
-                    })} placeholder="e.g., ₹1-5L" className="bg-secondary border-border" />
+                    })} placeholder="e.g., ₹1-5L" className="bg-secondary border-border transition-all duration-300 focus:scale-[1.02] focus:shadow-lg focus:shadow-primary/20" />
                     </div>
                   </div>
                   
-                  <div>
-                    <label className="text-sm font-medium text-foreground mb-2 block">Message *</label>
+                  <div className="group">
+                    <label className="text-sm font-medium text-foreground mb-2 block transition-colors group-focus-within:text-primary">Message *</label>
                     <Textarea required value={formData.message} onChange={e => setFormData({
                     ...formData,
                     message: e.target.value
-                  })} placeholder="Tell me about your project and goals..." rows={5} className="bg-secondary border-border resize-none" />
+                  })} placeholder="Tell me about your project and goals..." rows={5} className="bg-secondary border-border resize-none transition-all duration-300 focus:scale-[1.01] focus:shadow-lg focus:shadow-primary/20" />
                   </div>
                   
                   <Button variant="hero" size="lg" type="submit" disabled={isSubmitting} className="w-full">
