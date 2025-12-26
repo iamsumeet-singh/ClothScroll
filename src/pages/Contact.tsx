@@ -6,36 +6,38 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin, Instagram, Send, Globe, Calendar } from "lucide-react";
-
 const Contact = () => {
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     company: "",
     budget: "",
-    message: "",
+    message: ""
   });
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1000));
-    
     toast({
       title: "Message sent!",
-      description: "Thank you for reaching out. I'll get back to you within 24 hours.",
+      description: "Thank you for reaching out. I'll get back to you within 24 hours."
     });
-    
-    setFormData({ name: "", email: "", company: "", budget: "", message: "" });
+    setFormData({
+      name: "",
+      email: "",
+      company: "",
+      budget: "",
+      message: ""
+    });
     setIsSubmitting(false);
   };
-
-  return (
-    <>
+  return <>
       <Helmet>
         <title>Contact | Prateek Prakash - Performance Marketing Specialist</title>
         <meta name="description" content="Ready to scale your marketing? Contact Prateek Prakash for performance marketing consultation, automation solutions, and campaign management." />
@@ -72,58 +74,43 @@ const Contact = () => {
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label className="text-sm font-medium text-foreground mb-2 block">Name *</label>
-                      <Input
-                        required
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        placeholder="Your name"
-                        className="bg-secondary border-border"
-                      />
+                      <Input required value={formData.name} onChange={e => setFormData({
+                      ...formData,
+                      name: e.target.value
+                    })} placeholder="Your name" className="bg-secondary border-border" />
                     </div>
                     <div>
                       <label className="text-sm font-medium text-foreground mb-2 block">Email *</label>
-                      <Input
-                        required
-                        type="email"
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        placeholder="your@email.com"
-                        className="bg-secondary border-border"
-                      />
+                      <Input required type="email" value={formData.email} onChange={e => setFormData({
+                      ...formData,
+                      email: e.target.value
+                    })} placeholder="your@email.com" className="bg-secondary border-border" />
                     </div>
                   </div>
                   
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label className="text-sm font-medium text-foreground mb-2 block">Company</label>
-                      <Input
-                        value={formData.company}
-                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                        placeholder="Company name"
-                        className="bg-secondary border-border"
-                      />
+                      <Input value={formData.company} onChange={e => setFormData({
+                      ...formData,
+                      company: e.target.value
+                    })} placeholder="Company name" className="bg-secondary border-border" />
                     </div>
                     <div>
                       <label className="text-sm font-medium text-foreground mb-2 block">Monthly Ad Budget</label>
-                      <Input
-                        value={formData.budget}
-                        onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                        placeholder="e.g., ₹1-5L"
-                        className="bg-secondary border-border"
-                      />
+                      <Input value={formData.budget} onChange={e => setFormData({
+                      ...formData,
+                      budget: e.target.value
+                    })} placeholder="e.g., ₹1-5L" className="bg-secondary border-border" />
                     </div>
                   </div>
                   
                   <div>
                     <label className="text-sm font-medium text-foreground mb-2 block">Message *</label>
-                    <Textarea
-                      required
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Tell me about your project and goals..."
-                      rows={5}
-                      className="bg-secondary border-border resize-none"
-                    />
+                    <Textarea required value={formData.message} onChange={e => setFormData({
+                    ...formData,
+                    message: e.target.value
+                  })} placeholder="Tell me about your project and goals..." rows={5} className="bg-secondary border-border resize-none" />
                   </div>
                   
                   <Button variant="hero" size="lg" type="submit" disabled={isSubmitting} className="w-full">
@@ -144,23 +131,17 @@ const Contact = () => {
                 </div>
 
                 <div className="space-y-4">
-                  <a 
-                    href="mailto:inexprateek@gmail.com" 
-                    className="metric-card p-5 flex items-center gap-4 hover:border-primary/50 transition-colors group"
-                  >
+                  <a href="mailto:inexprateek@gmail.com" className="metric-card p-5 flex items-center gap-4 hover:border-primary/50 transition-colors group">
                     <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                       <Mail className="text-primary" size={22} />
                     </div>
                     <div>
                       <p className="font-medium text-foreground">Email</p>
-                      <p className="text-muted-foreground text-sm">inexprateek@gmail.com</p>
+                      <p className="text-muted-foreground text-sm">prateek.adamanager@gmail.com</p>
                     </div>
                   </a>
                   
-                  <a 
-                    href="tel:+916394553354" 
-                    className="metric-card p-5 flex items-center gap-4 hover:border-primary/50 transition-colors group"
-                  >
+                  <a href="tel:+916394553354" className="metric-card p-5 flex items-center gap-4 hover:border-primary/50 transition-colors group">
                     <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
                       <Phone className="text-accent" size={22} />
                     </div>
@@ -180,12 +161,7 @@ const Contact = () => {
                     </div>
                   </div>
                   
-                  <a 
-                    href="https://instagram.com/prateek.solopreneur" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="metric-card p-5 flex items-center gap-4 hover:border-primary/50 transition-colors group"
-                  >
+                  <a href="https://instagram.com/prateek.solopreneur" target="_blank" rel="noopener noreferrer" className="metric-card p-5 flex items-center gap-4 hover:border-primary/50 transition-colors group">
                     <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
                       <Instagram className="text-accent" size={22} />
                     </div>
@@ -195,12 +171,7 @@ const Contact = () => {
                     </div>
                   </a>
                   
-                  <a 
-                    href="https://prateek.inexera.in" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="metric-card p-5 flex items-center gap-4 hover:border-primary/50 transition-colors group"
-                  >
+                  <a href="https://prateek.inexera.in" target="_blank" rel="noopener noreferrer" className="metric-card p-5 flex items-center gap-4 hover:border-primary/50 transition-colors group">
                     <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                       <Globe className="text-primary" size={22} />
                     </div>
@@ -217,17 +188,13 @@ const Contact = () => {
                     <Calendar size={16} />
                     <span className="text-sm font-medium">Currently Available</span>
                   </div>
-                  <p className="text-muted-foreground text-sm">
-                    Accepting new projects for Q1 2025
-                  </p>
+                  <p className="text-muted-foreground text-sm">Accepting new projects for Q1 2026</p>
                 </div>
               </div>
             </div>
           </div>
         </section>
       </Layout>
-    </>
-  );
+    </>;
 };
-
 export default Contact;
