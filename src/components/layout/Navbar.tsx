@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import logo from "@/assets/logo.png";
 
 const navLinks = [
@@ -60,15 +61,18 @@ export function Navbar() {
                 ))}
               </div>
 
-              {/* CTA Button */}
-              <div className="hidden md:block">
+              {/* CTA Button & Theme Toggle */}
+              <div className="hidden md:flex items-center gap-2">
+                <ThemeToggle />
                 <Button variant="default" size="sm" className="rounded-xl" asChild>
                   <Link to="/contact">Let's Talk</Link>
                 </Button>
               </div>
 
-              {/* Spacer for mobile to balance the layout */}
-              <div className="lg:hidden w-10" />
+              {/* Theme Toggle for mobile */}
+              <div className="lg:hidden">
+                <ThemeToggle />
+              </div>
             </div>
           </div>
 
