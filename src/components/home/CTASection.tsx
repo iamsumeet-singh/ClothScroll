@@ -4,47 +4,43 @@ import { Button } from "@/components/ui/button";
 
 export function CTASection() {
   return (
-    <section className="py-24 md:py-32 relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/10" />
-      <div className="absolute inset-0 bg-grid opacity-20" />
+    <section className="py-16 md:py-24 relative overflow-hidden">
+      {/* Floating orbs */}
+      <div className="absolute top-1/2 left-1/4 w-64 h-64 rounded-full bg-primary/10 blur-3xl animate-float" />
+      <div className="absolute bottom-1/4 right-1/4 w-48 h-48 rounded-full bg-accent/10 blur-3xl animate-float" style={{ animationDelay: "1s" }} />
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="section-heading mb-6">
-            Ready to{" "}
-            <span className="text-gradient-primary">Scale Your Growth?</span>
+        <div className="glass-card max-w-3xl mx-auto text-center p-8 md:p-12">
+          <h2 className="section-heading mb-4">
+            Ready to Scale?
           </h2>
-          <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-            Let's discuss how data-driven performance marketing can transform your business metrics 
-            and deliver measurable ROI.
+          <p className="section-subheading mb-8 max-w-xl mx-auto">
+            Let's discuss how data-driven performance marketing can transform your business.
           </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button variant="hero" size="xl" asChild>
-              <Link to="/contact" className="gap-3">
-                Start a Conversation
-                <ArrowRight size={20} />
-              </Link>
-            </Button>
-          </div>
+          {/* CTA Button */}
+          <Button size="xl" className="rounded-2xl mb-8" asChild>
+            <Link to="/contact" className="gap-2">
+              Start a Conversation
+              <ArrowRight size={18} />
+            </Link>
+          </Button>
 
           {/* Contact Info */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center text-sm">
             <a 
               href="mailto:inexprateek@gmail.com" 
-              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+              className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
             >
-              <Mail size={18} />
+              <Mail size={16} />
               inexprateek@gmail.com
             </a>
-            <span className="hidden sm:block w-1 h-1 rounded-full bg-muted-foreground" />
+            <span className="hidden sm:block w-1 h-1 rounded-full bg-border" />
             <a 
               href="tel:+916394553354" 
-              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+              className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
             >
-              <Phone size={18} />
+              <Phone size={16} />
               +91 6394553354
             </a>
           </div>

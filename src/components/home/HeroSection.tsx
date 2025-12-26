@@ -4,74 +4,89 @@ import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-grid opacity-30" />
-      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/20 rounded-full blur-[128px] animate-glow-pulse" />
-      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-accent/20 rounded-full blur-[128px] animate-glow-pulse" style={{ animationDelay: "1s" }} />
+    <section className="relative min-h-[100svh] flex items-center overflow-hidden bg-mesh pt-20">
+      {/* Floating Glass Orbs */}
+      <div className="absolute top-1/4 left-[10%] w-48 h-48 md:w-72 md:h-72 rounded-full bg-primary/20 blur-3xl animate-float" />
+      <div className="absolute bottom-1/3 right-[5%] w-56 h-56 md:w-80 md:h-80 rounded-full bg-accent/15 blur-3xl animate-float" style={{ animationDelay: "1.5s" }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-primary/5 blur-3xl animate-glow" />
       
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-5xl mx-auto">
+      <div className="container mx-auto px-4 relative z-10 py-12 md:py-20">
+        <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary border border-border mb-8 opacity-0 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-sm text-muted-foreground">Available for new projects</span>
+          <div 
+            className="pill-badge mx-auto mb-6 md:mb-8 opacity-0 animate-fade-in" 
+            style={{ animationDelay: "0.1s" }}
+          >
+            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+            <span className="text-foreground">Available for new projects</span>
           </div>
 
           {/* Main Heading */}
-          <h1 className="section-heading mb-6 opacity-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+          <h1 
+            className="section-heading mb-4 md:mb-6 opacity-0 animate-fade-in px-2" 
+            style={{ animationDelay: "0.2s" }}
+          >
             Scaling Brands with{" "}
             <span className="text-gradient-primary">Data-Driven</span>{" "}
-            Performance Marketing
+            Marketing
           </h1>
 
           {/* Subheading */}
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mb-10 leading-relaxed opacity-0 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-            4+ years of experience driving growth for B2B, B2C & D2C brands. 
-            Expert in reducing CPL by up to 80% and managing ₹1.5Cr+ ad spend with measurable ROI.
+          <p 
+            className="section-subheading max-w-2xl mx-auto mb-8 md:mb-10 opacity-0 animate-fade-in px-4" 
+            style={{ animationDelay: "0.3s" }}
+          >
+            4+ years driving growth for B2B, B2C & D2C brands. 
+            Expert in reducing CPL by up to 80% with measurable ROI.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-wrap gap-4 mb-16 opacity-0 animate-fade-in" style={{ animationDelay: "0.4s" }}>
-            <Button variant="hero" size="xl" asChild>
-              <Link to="/contact" className="gap-3">
+          <div 
+            className="flex flex-col sm:flex-row justify-center gap-3 mb-12 md:mb-16 px-4 opacity-0 animate-fade-in" 
+            style={{ animationDelay: "0.4s" }}
+          >
+            <Button size="lg" className="rounded-2xl h-14 px-8 text-base" asChild>
+              <Link to="/contact" className="gap-2">
                 Start a Project
-                <ArrowRight size={20} />
+                <ArrowRight size={18} />
               </Link>
             </Button>
-            <Button variant="glass" size="xl" asChild>
+            <Button variant="outline" size="lg" className="rounded-2xl h-14 px-8 text-base glass" asChild>
               <Link to="/case-studies">View Case Studies</Link>
             </Button>
           </div>
 
           {/* Stats Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 opacity-0 animate-fade-in" style={{ animationDelay: "0.5s" }}>
-            <div className="metric-card group">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+          <div 
+            className="grid grid-cols-1 sm:grid-cols-3 gap-4 opacity-0 animate-fade-in" 
+            style={{ animationDelay: "0.5s" }}
+          >
+            <div className="glass-card group text-center sm:text-left">
+              <div className="flex items-center justify-center sm:justify-start gap-3 mb-2">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
                   <TrendingUp className="text-primary" size={20} />
                 </div>
-                <span className="text-3xl font-display font-bold text-foreground">₹6Cr+</span>
+                <span className="text-2xl md:text-3xl font-display font-bold">₹6Cr+</span>
               </div>
-              <p className="text-muted-foreground text-sm">Revenue Generated for Clients</p>
+              <p className="text-muted-foreground text-sm">Revenue Generated</p>
             </div>
 
-            <div className="metric-card group">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+            <div className="glass-card group text-center sm:text-left">
+              <div className="flex items-center justify-center sm:justify-start gap-3 mb-2">
+                <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
                   <Target className="text-accent" size={20} />
                 </div>
-                <span className="text-3xl font-display font-bold text-foreground">80%</span>
+                <span className="text-2xl md:text-3xl font-display font-bold">80%</span>
               </div>
-              <p className="text-muted-foreground text-sm">Reduction in Cost Per Lead</p>
+              <p className="text-muted-foreground text-sm">CPL Reduction</p>
             </div>
 
-            <div className="metric-card group">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+            <div className="glass-card group text-center sm:text-left">
+              <div className="flex items-center justify-center sm:justify-start gap-3 mb-2">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
                   <Zap className="text-primary" size={20} />
                 </div>
-                <span className="text-3xl font-display font-bold text-foreground">₹1.5Cr+</span>
+                <span className="text-2xl md:text-3xl font-display font-bold">₹1.5Cr+</span>
               </div>
               <p className="text-muted-foreground text-sm">Ad Spend Managed</p>
             </div>
