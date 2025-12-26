@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/logo.png";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -37,9 +38,7 @@ export function Navbar() {
                 to="/" 
                 className="flex items-center gap-2 absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0"
               >
-                <div className="w-9 h-9 rounded-xl bg-gradient-primary flex items-center justify-center shadow-soft">
-                  <span className="font-display font-semibold text-primary-foreground text-sm">PP</span>
-                </div>
+                <img src={logo} alt="Prateek Prakash Logo" className="w-9 h-9 rounded-xl shadow-soft" />
                 <span className="font-display font-semibold text-base hidden sm:block">Prateek Prakash</span>
               </Link>
 
