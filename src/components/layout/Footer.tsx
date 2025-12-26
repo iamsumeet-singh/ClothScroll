@@ -3,16 +3,16 @@ import { Mail, Phone, MapPin, Instagram } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-card">
+    <footer className="border-t border-border bg-secondary/30 safe-bottom">
       <div className="container mx-auto px-4 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
           {/* Brand */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center">
-                <span className="font-display font-bold text-primary-foreground text-lg">PP</span>
+              <div className="w-9 h-9 rounded-xl bg-gradient-primary flex items-center justify-center">
+                <span className="font-display font-semibold text-primary-foreground text-sm">PP</span>
               </div>
-              <span className="font-display font-bold text-lg">Prateek Prakash</span>
+              <span className="font-display font-semibold text-base">Prateek Prakash</span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Performance Marketing & Automation Specialist with 4+ years driving growth for B2B, B2C, and D2C brands.
@@ -23,10 +23,10 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="font-display font-semibold text-foreground">Quick Links</h4>
             <div className="flex flex-col gap-2">
-              <Link to="/about" className="text-muted-foreground hover:text-primary transition-colors text-sm">About Me</Link>
-              <Link to="/experience" className="text-muted-foreground hover:text-primary transition-colors text-sm">Experience</Link>
-              <Link to="/services" className="text-muted-foreground hover:text-primary transition-colors text-sm">Services</Link>
-              <Link to="/case-studies" className="text-muted-foreground hover:text-primary transition-colors text-sm">Case Studies</Link>
+              <Link to="/about" className="text-muted-foreground hover:text-foreground transition-colors text-sm">About Me</Link>
+              <Link to="/experience" className="text-muted-foreground hover:text-foreground transition-colors text-sm">Experience</Link>
+              <Link to="/services" className="text-muted-foreground hover:text-foreground transition-colors text-sm">Services</Link>
+              <Link to="/case-studies" className="text-muted-foreground hover:text-foreground transition-colors text-sm">Case Studies</Link>
             </div>
           </div>
 
@@ -45,11 +45,11 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="font-display font-semibold text-foreground">Get in Touch</h4>
             <div className="flex flex-col gap-3">
-              <a href="mailto:inexprateek@gmail.com" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm">
+              <a href="mailto:inexprateek@gmail.com" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors text-sm">
                 <Mail size={16} />
                 inexprateek@gmail.com
               </a>
-              <a href="tel:+916394553354" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm">
+              <a href="tel:+916394553354" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors text-sm">
                 <Phone size={16} />
                 +91 6394553354
               </a>
@@ -57,7 +57,7 @@ export function Footer() {
                 <MapPin size={16} />
                 Bangalore, Karnataka
               </span>
-              <a href="https://instagram.com/prateek.solopreneur" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm">
+              <a href="https://instagram.com/prateek.solopreneur" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors text-sm">
                 <Instagram size={16} />
                 @prateek.solopreneur
               </a>
@@ -65,11 +65,11 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-muted-foreground text-sm">
+        <div className="mt-12 pt-6 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-muted-foreground text-sm text-center md:text-left">
             © {new Date().getFullYear()} Prateek Prakash. All rights reserved.
           </p>
-          <p className="text-muted-foreground text-sm">
+          <p className="text-muted-foreground text-xs">
             Performance Marketing Specialist
           </p>
         </div>
