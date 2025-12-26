@@ -1,13 +1,24 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Layout } from "@/components/layout/Layout";
+import { HeroSection } from "@/components/home/HeroSection";
+import { ServicesPreview } from "@/components/home/ServicesPreview";
+import { ExperiencePreview } from "@/components/home/ExperiencePreview";
+import { CTASection } from "@/components/home/CTASection";
+import { Helmet } from "react-helmet-async";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <>
+      <Helmet>
+        <title>Prateek Prakash | Performance Marketing Specialist</title>
+        <meta name="description" content="Performance Marketing & Automation Specialist with 4+ years driving growth for B2B, B2C, and D2C brands. Expert in Meta Ads, Google Ads, and marketing automation." />
+      </Helmet>
+      <Layout>
+        <HeroSection />
+        <ServicesPreview />
+        <ExperiencePreview />
+        <CTASection />
+      </Layout>
+    </>
   );
 };
 
