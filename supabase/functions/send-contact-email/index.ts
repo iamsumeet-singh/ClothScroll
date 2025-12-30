@@ -131,6 +131,30 @@ const handler = async (req: Request): Promise<Response> => {
     const safeBudget = budget ? escapeHtml(budget) : '';
     const safeMessage = escapeHtml(message);
 
+    // Send to Google Sheets
+    const googleSheetsWebhookUrl = Deno.env.get("GOOGLE_SHEETS_WEBHOOK_URL");
+    if (googleSheetsWebhookUrl) {
+      try {
+        await fetch(googleSheetsWebhookUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: safeName,
+            email: safeEmail,
+            phone: safePhone,
+            company: safeCompany,
+            budget: safeBudget,
+            message: safeMessage,
+            timestamp: new Date().toISOString(),
+          }),
+        });
+        console.log("Data sent to Google Sheets successfully");
+      } catch (sheetError) {
+        console.error("Error sending to Google Sheets:", sheetError);
+        // Continue with email sending even if sheets fails
+      }
+    }
+
     const emailResponse = await resend.emails.send({
       from: "Contact Form <onboarding@resend.dev>",
       to: ["tools.prateek@gmail.com"],
