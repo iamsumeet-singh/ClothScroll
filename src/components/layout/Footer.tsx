@@ -35,10 +35,10 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="font-display font-semibold text-foreground">Services</h4>
             <div className="flex flex-col gap-2">
-              <span className="text-muted-foreground text-sm">Meta Ads Management</span>
-              <span className="text-muted-foreground text-sm">Google Ads Campaigns</span>
-              <span className="text-muted-foreground text-sm">Marketing Automation</span>
-              <span className="text-muted-foreground text-sm">CRM Integration</span>
+              <Link to="/services#meta-ads" className="text-muted-foreground hover:text-foreground transition-colors text-sm">Meta Ads Management</Link>
+              <Link to="/services#google-ads" className="text-muted-foreground hover:text-foreground transition-colors text-sm">Google Ads Campaigns</Link>
+              <Link to="/services#automation" className="text-muted-foreground hover:text-foreground transition-colors text-sm">Marketing Automation</Link>
+              <Link to="/services#crm" className="text-muted-foreground hover:text-foreground transition-colors text-sm">CRM Integration</Link>
             </div>
           </div>
 
