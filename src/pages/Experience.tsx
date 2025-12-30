@@ -91,14 +91,14 @@ const Experience = () => {
       </Helmet>
       <Layout>
         {/* Hero */}
-        <section className="py-24 md:py-32 relative overflow-hidden">
+        <section className="pt-16 pb-8 md:pt-24 md:pb-12 relative overflow-hidden">
           <div className="absolute inset-0 bg-grid opacity-30" />
           <div className="absolute top-1/3 -left-32 w-96 h-96 bg-accent/20 rounded-full blur-[128px]" />
           
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-4xl">
               <span className="text-primary text-sm uppercase tracking-wider font-medium mb-4 block">Experience</span>
-              <h1 className="section-heading mb-8">
+              <h1 className="section-heading mb-6">
                 A Track Record of{" "}
                 <span className="text-gradient-accent">Consistent Growth</span>
               </h1>
@@ -111,7 +111,7 @@ const Experience = () => {
         </section>
 
         {/* Timeline */}
-        <section className="py-24 md:py-32 bg-card">
+        <section className="py-12 md:py-16 bg-card">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto space-y-12">
               {experiences.map((exp, index) => (

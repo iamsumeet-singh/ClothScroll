@@ -31,10 +31,10 @@ const services = [
 
 export function ServicesPreview() {
   return (
-    <section className="py-16 md:py-24 relative">
+    <section className="py-12 md:py-16 relative">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-8 md:mb-10">
           <span className="pill-badge mx-auto mb-4">
             <span className="w-2 h-2 rounded-full bg-accent" />
             Services

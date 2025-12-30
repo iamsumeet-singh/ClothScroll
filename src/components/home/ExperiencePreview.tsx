@@ -25,7 +25,7 @@ const experiences = [
 
 export function ExperiencePreview() {
   return (
-    <section className="py-16 md:py-24 relative">
+    <section className="py-12 md:py-16 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-secondary/50 to-transparent pointer-events-none" />
       
       <div className="container mx-auto px-4 relative z-10">
