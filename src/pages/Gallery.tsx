@@ -104,14 +104,14 @@ const Gallery = () => {
       </Helmet>
       <Layout>
         {/* Hero */}
-        <section className="py-24 md:py-32 relative overflow-hidden">
+        <section className="pt-16 pb-8 md:pt-24 md:pb-12 relative overflow-hidden">
           <div className="absolute inset-0 bg-grid opacity-30" />
           <div className="absolute top-1/3 right-0 w-96 h-96 bg-primary/20 rounded-full blur-[128px]" />
           
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-4xl">
               <span className="text-primary text-sm uppercase tracking-wider font-medium mb-4 block">Gallery</span>
-              <h1 className="section-heading mb-8">
+              <h1 className="section-heading mb-6">
                 Moments &{" "}
                 <span className="text-gradient-primary">Milestones</span>
               </h1>
@@ -124,7 +124,7 @@ const Gallery = () => {
         </section>
 
         {/* Category Filter */}
-        <section className="py-8 bg-card border-y border-border">
+        <section className="py-6 bg-card border-y border-border">
           <div className="container mx-auto px-4">
             <div className="flex flex-wrap gap-3 justify-center">
               {["all", "achievement", "event", "milestone"].map((category) => (
@@ -145,7 +145,7 @@ const Gallery = () => {
         </section>
 
         {/* Carousel Gallery */}
-        <section className="py-24 md:py-32">
+        <section className="py-12 md:py-16">
           <div className="container mx-auto px-4">
             <Carousel
               opts={{

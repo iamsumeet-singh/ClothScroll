@@ -40,14 +40,14 @@ const Services = () => {
       </Helmet>
       <Layout>
         {/* Hero */}
-        <section className="py-24 md:py-32 relative overflow-hidden">
+        <section className="pt-16 pb-8 md:pt-24 md:pb-12 relative overflow-hidden">
           <div className="absolute inset-0 bg-dots opacity-20" />
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-[128px]" />
           
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-4xl">
               <span className="text-primary text-sm uppercase tracking-wider font-medium mb-4 block">Services</span>
-              <h1 className="section-heading mb-8">
+              <h1 className="section-heading mb-6">
                 Performance Systems That{" "}
                 <span className="text-gradient-primary">Scale Revenue</span>
               </h1>
@@ -60,7 +60,7 @@ const Services = () => {
         </section>
 
         {/* Service 1: Meta Ads */}
-        <section id="meta-ads" className="py-24 md:py-32 bg-card">
+        <section id="meta-ads" className="py-12 md:py-16 bg-card">
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-16 items-start">
               <div>
@@ -246,7 +246,7 @@ const Services = () => {
         </section>
 
         {/* Service 2: Google Ads */}
-        <section id="google-ads" className="py-24 md:py-32">
+        <section id="google-ads" className="py-12 md:py-16">
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-16 items-start">
               <div className="lg:order-2">
@@ -418,7 +418,7 @@ const Services = () => {
         </section>
 
         {/* Service 3: Marketing Automation */}
-        <section id="automation" className="py-24 md:py-32 bg-card">
+        <section id="automation" className="py-12 md:py-16 bg-card">
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-16 items-start">
               <div>
@@ -549,7 +549,7 @@ const Services = () => {
         </section>
 
         {/* Service 4: CRM Integration */}
-        <section id="crm" className="py-24 md:py-32">
+        <section id="crm" className="py-12 md:py-16">
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-16 items-start">
               <div className="lg:order-2">
@@ -688,9 +688,9 @@ const Services = () => {
         </section>
 
         {/* How Everything Works Together */}
-        <section className="py-24 md:py-32 bg-card">
+        <section className="py-12 md:py-16 bg-card">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center mb-16">
+            <div className="max-w-3xl mx-auto text-center mb-10">
               <span className="text-primary text-sm uppercase tracking-wider font-medium mb-4 block">The System</span>
               <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
                 How Everything Works Together
@@ -737,9 +737,9 @@ const Services = () => {
         </section>
 
         {/* What Clients Get */}
-        <section className="py-24 md:py-32">
+        <section className="py-12 md:py-16">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center mb-16">
+            <div className="max-w-3xl mx-auto text-center mb-10">
               <span className="text-accent text-sm uppercase tracking-wider font-medium mb-4 block">The Difference</span>
               <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
                 What Clients Get When They Work With Me
@@ -770,7 +770,7 @@ const Services = () => {
         </section>
 
         {/* CTA */}
-        <section className="py-24 md:py-32 relative overflow-hidden bg-card">
+        <section className="py-12 md:py-16 relative overflow-hidden bg-card">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10" />
           
           <div className="container mx-auto px-4 relative z-10 text-center">
