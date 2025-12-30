@@ -18,7 +18,8 @@ const Contact = () => {
     phone: "",
     company: "",
     budget: "",
-    message: ""
+    message: "",
+    honeypot: "" // Hidden field for bot detection
   });
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -41,7 +42,8 @@ const Contact = () => {
         phone: "",
         company: "",
         budget: "",
-        message: ""
+        message: "",
+        honeypot: ""
       });
     } catch (error: any) {
       console.error("Error sending message:", error);
@@ -136,6 +138,18 @@ const Contact = () => {
                     ...formData,
                     message: e.target.value
                   })} placeholder="Tell me about your project and goals..." rows={5} className="bg-secondary border-border resize-none transition-all duration-300 focus:scale-[1.01] focus:shadow-lg focus:shadow-primary/20" />
+                  </div>
+                  
+                  {/* Honeypot field - hidden from real users, bots will fill it */}
+                  <div className="absolute left-[-9999px]" aria-hidden="true">
+                    <Input
+                      type="text"
+                      name="website"
+                      value={formData.honeypot}
+                      onChange={e => setFormData({...formData, honeypot: e.target.value})}
+                      tabIndex={-1}
+                      autoComplete="off"
+                    />
                   </div>
                   
                   <Button variant="hero" size="lg" type="submit" disabled={isSubmitting} className="w-full">
